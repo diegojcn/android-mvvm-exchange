@@ -1,7 +1,7 @@
 package br.com.network
 
 
-import br.com.network.api.ISymbolApi
+import br.com.network.api.IExchangeRatesApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -13,13 +13,13 @@ import okhttp3.HttpUrl
 
 val networkModule = module {
 
-    single<OkHttpClient>() { provideDefaultOkhttpClient() }
+    single<OkHttpClient>() { provideDefaultOkHttpClient() }
     single<Retrofit>() { provideRetrofit(get()) }
-    single<ISymbolApi> { provideSymbolApi(get()) }
+    single<IExchangeRatesApi> { provideExchangeRates(get()) }
 
 }
 
-fun provideDefaultOkhttpClient(): OkHttpClient {
+fun provideDefaultOkHttpClient(): OkHttpClient {
 
     val logging = HttpLoggingInterceptor()
     logging.level = HttpLoggingInterceptor.Level.BODY
@@ -44,7 +44,7 @@ fun provideRetrofit(client: OkHttpClient): Retrofit {
             .build()
 }
 
-fun provideSymbolApi(retrofit: Retrofit): ISymbolApi = retrofit.create(ISymbolApi::class.java)
+fun provideExchangeRates(retrofit: Retrofit): IExchangeRatesApi = retrofit.create(IExchangeRatesApi::class.java)
 
 
 

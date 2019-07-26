@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import br.com.data.model.ConversionData
 import br.com.exchange.R
-import br.com.exchange.app.model.HistoryItemViewModel
+import br.com.exchange.app.history.model.HistoryItemViewModel
 import br.com.exchange.databinding.ItemHistoryBinding
 
 class PostListAdapter: RecyclerView.Adapter<PostListAdapter.ViewHolder>() {

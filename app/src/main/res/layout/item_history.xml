@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="br.com.exchange.app.model.HistoryItemViewModel" />
+            type="br.com.exchange.app.history.model.HistoryItemViewModel" />
     </data>
     <RelativeLayout
             android:id="@+id/card_event"

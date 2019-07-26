@@ -1,4 +1,4 @@
-package br.com.exchange.app.model
+package br.com.exchange.app.history.model
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
