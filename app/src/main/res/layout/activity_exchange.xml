@@ -24,12 +24,11 @@
                 android:background="@color/toolBar"
                 android:theme="?attr/actionBarTheme"
                 android:minHeight="?attr/actionBarSize"
-                android:id="@+id/toolbar2" app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/toolbar" app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:popupTheme="@style/AppTheme.PopupOverlay">
-
-
+                app:popupTheme="@style/AppTheme.PopupOverlay" app:titleTextColor="#FFFFFF"
+                app:layout_constraintHorizontal_bias="0.0">
         </androidx.appcompat.widget.Toolbar>
 
 
@@ -40,7 +39,7 @@
                 app:layout_constraintTop_toTopOf="@+id/spinnerTo"
                 android:labelFor="@id/spinnerTo"
                 android:layout_marginTop="50dp"
-                app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
                 android:id="@+id/labelSpinner"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="10dp"
@@ -76,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionGo"
                     android:inputType="numberDecimal"
-                    android:hint="Valor R$"
+                    android:hint="Valor a ser convertido"
                     android:text="@={viewModel.valueTo}"
                     style="@style/modal_material_input_edit_text"
                     android:id="@+id/edit_textnewvalue"/>
@@ -143,6 +142,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginStart="8dp"
                 app:layout_constraintStart_toStartOf="parent"/>
+        <Button
+                android:text="Histórico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/historyBtn"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="@+id/toolbar"
+                android:layout_marginEnd="8dp" android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar" app:layout_constraintVertical_bias="1.0"
+                android:layout_marginTop="5dp" android:background="@color/buttons" android:shadowColor="#000A0A0A"
+                android:textColor="#FFFFFF"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,41 +1,42 @@
 package br.com.exchange.app.history.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import br.com.data.model.ConversionData
 import br.com.exchange.R
 import br.com.exchange.app.history.model.HistoryItemViewModel
 import br.com.exchange.databinding.ItemHistoryBinding
 
-class PostListAdapter: RecyclerView.Adapter<PostListAdapter.ViewHolder>() {
-    private lateinit var postList:List<ConversionData>
+class HistoryListAdapter(private val context: Context) :
+    RecyclerView.Adapter<HistoryListAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostListAdapter.ViewHolder {
-        val binding: ItemHistoryBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
-            R.layout.item_history, parent, false)
+    private lateinit var items: List<HistoryItemViewModel>
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryListAdapter.ViewHolder {
+        val binding: ItemHistoryBinding = DataBindingUtil.inflate(
+            LayoutInflater.from(parent.context),
+            R.layout.item_history, parent, false
+        )
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: PostListAdapter.ViewHolder, position: Int) {
-        holder.bind(postList[position])
-    }
+    override fun onBindViewHolder(holder: HistoryListAdapter.ViewHolder, position: Int) = holder.bind(items[position])
 
-    override fun getItemCount(): Int {
-        return if(::postList.isInitialized) postList.size else 0
-    }
+    override fun getItemCount(): Int = items.size
 
-    fun updatePostList(postList:List<ConversionData>){
-        this.postList = postList
+    fun update(list: List<HistoryItemViewModel>) {
+        this.items = list
         notifyDataSetChanged()
     }
 
-    class ViewHolder(private val binding: ItemHistoryBinding):RecyclerView.ViewHolder(binding.root){
-       private val viewModel = HistoryItemViewModel()
-        fun bind(post:ConversionData){
-//            viewModel.bind(post)
-            binding.viewModel = viewModel
+    inner class ViewHolder(private val binding: ItemHistoryBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: HistoryItemViewModel) {
+
+            binding.viewModel = item
+            binding.executePendingBindings()
+
         }
     }
 }

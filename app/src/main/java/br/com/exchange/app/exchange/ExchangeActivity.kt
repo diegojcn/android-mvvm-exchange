@@ -12,11 +12,13 @@ import br.com.exchange.databinding.ActivityExchangeBinding
 import org.koin.core.KoinComponent
 import android.widget.ArrayAdapter
 import br.com.exchange.app.hideKeyboard
+import br.com.exchange.app.history.HistoryActivity
 import br.com.network.api.IExchangeRatesApi
 import br.com.network.model.RateDTO
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import org.jetbrains.anko.intentFor
 import org.koin.core.inject
 
 
@@ -41,11 +43,16 @@ class ExchangeActivity : BaseActivity(), KoinComponent {
 
 
         binding.viewModel = viewModel
+        binding.toolbar.setSubtitle("CONVERSÃO DE MOEDA")
+        binding.historyBtn.setOnClickListener{
+            startActivity(intentFor<HistoryActivity>())
+        }
 
         this.initializeSymbol()
 
         val onClickListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(p0: AdapterView<*>?) {
+                hideKeyboard()
             }
 
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {

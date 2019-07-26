@@ -2,16 +2,20 @@ package br.com.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.util.*
 
 @Entity(tableName = "ConversionData")
-class ConversionData(
+data class ConversionData (
 
-        @PrimaryKey(autoGenerate = false)
+        @PrimaryKey(autoGenerate = true)
         val id: Long?,
-        val name: String?,
-        val price: Float?,
-        val description: String?,
-        val batch: String?,
-        val eventTerminalId: Long?
+        val valueTo: Float?,
+        val rateTo: Float?,
+        val symbolTo: String,
+        val symbolFrom: String,
+        val valueFrom: Float?,
+        val date: Date?
+
+
 )
 {}

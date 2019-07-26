@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "7c13c1a1e6020224c31857c591cc65cc",
+    "identityHash": "6920495e5e65040036b3de85894ed7dd",
     "entities": [
       {
         "tableName": "ConversionData",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER, `name` TEXT, `price` REAL, `description` TEXT, `batch` TEXT, `eventTerminalId` INTEGER, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `valueTo` REAL, `rateTo` REAL, `symbolTo` TEXT NOT NULL, `symbolFrom` TEXT NOT NULL, `valueFrom` REAL, `date` INTEGER)",
         "fields": [
           {
             "fieldPath": "id",
@@ -15,32 +15,38 @@
             "notNull": false
           },
           {
-            "fieldPath": "name",
-            "columnName": "name",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "price",
-            "columnName": "price",
+            "fieldPath": "valueTo",
+            "columnName": "valueTo",
             "affinity": "REAL",
             "notNull": false
           },
           {
-            "fieldPath": "description",
-            "columnName": "description",
-            "affinity": "TEXT",
+            "fieldPath": "rateTo",
+            "columnName": "rateTo",
+            "affinity": "REAL",
             "notNull": false
           },
           {
-            "fieldPath": "batch",
-            "columnName": "batch",
+            "fieldPath": "symbolTo",
+            "columnName": "symbolTo",
             "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "symbolFrom",
+            "columnName": "symbolFrom",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "valueFrom",
+            "columnName": "valueFrom",
+            "affinity": "REAL",
             "notNull": false
           },
           {
-            "fieldPath": "eventTerminalId",
-            "columnName": "eventTerminalId",
+            "fieldPath": "date",
+            "columnName": "date",
             "affinity": "INTEGER",
             "notNull": false
           }
@@ -49,7 +55,7 @@
           "columnNames": [
             "id"
           ],
-          "autoGenerate": false
+          "autoGenerate": true
         },
         "indices": [],
         "foreignKeys": []
@@ -57,7 +63,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"7c13c1a1e6020224c31857c591cc65cc\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"6920495e5e65040036b3de85894ed7dd\")"
     ]
   }
 }

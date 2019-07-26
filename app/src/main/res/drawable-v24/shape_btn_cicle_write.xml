@@ -8,7 +8,7 @@
         android:radius="@dimen/margin" />
 
     <stroke
-        android:color="#4d91eb"
+        android:color="@color/buttons"
         android:width="1dp"/>
 
     <solid

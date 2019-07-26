@@ -34,6 +34,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/login_username_email"
+                    android:imeOptions="actionGo"
+                    style="@style/modal_material_input_edit_text"
                     android:id="@+id/edit_textnewvalue"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -50,6 +52,8 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:imeOptions="actionGo"
+                    style="@style/modal_material_input_edit_text"
                     android:hint="@string/login_password"/>
         </com.google.android.material.textfield.TextInputLayout>
         <Button
@@ -119,7 +123,8 @@
                 android:theme="?attr/actionBarTheme"
                 android:minHeight="?attr/actionBarSize"
                 android:id="@+id/toolbar"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
         />
         <TextView
