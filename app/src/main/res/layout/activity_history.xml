@@ -8,7 +8,7 @@
         <import type="android.view.View"/>
         <variable
                 name="viewModel"
-                type="br.com.exchange.app.history.viewmodel.HistoryViewModel"/>
+                type="br.com.exchange.app.history.HistoryViewModel"/>
 
     </data>
 

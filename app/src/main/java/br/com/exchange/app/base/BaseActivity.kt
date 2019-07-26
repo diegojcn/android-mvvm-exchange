@@ -7,10 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import br.com.exchange.app.hideKeyboard
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import org.jetbrains.anko.findOptional
+import org.koin.core.KoinComponent
 
-abstract class BaseActivity : AppCompatActivity() {
-
-    val parentView: View? by lazy { findOptional<View>(android.R.id.content) }
+abstract class BaseActivity : AppCompatActivity(), KoinComponent {
 
     override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase))

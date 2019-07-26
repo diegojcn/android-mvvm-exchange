@@ -1,4 +1,4 @@
-package br.com.exchange.app.login.viewmodel
+package br.com.exchange.app.login
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel

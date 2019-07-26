@@ -43,23 +43,16 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:$room_version"
     kapt "android.arch.persistence.room:compiler:$room_version"
 
-    implementation 'com.google.code.gson:gson:2.2.4'
-
-    //rxjava
-    implementation "io.reactivex.rxjava2:rxjava:$rxjava"
+    //rx
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroid"
     implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlin"
-
-
-
-}
-//Koin - https://insert-koin.io/docs/1.0/getting-started/android/
-dependencies {
+    //KOIN
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-core:$koin_version"
     implementation "org.koin:koin-core-ext:$koin_version"
     testImplementation "org.koin:koin-test:$koin_version"
     implementation "org.koin:koin-java:$koin_version"
+
 }
 
 repositories {

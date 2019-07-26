@@ -6,18 +6,14 @@ import androidx.lifecycle.ViewModelProviders
 import br.com.exchange.R
 import br.com.exchange.app.base.BaseActivity
 import br.com.exchange.app.exchange.ExchangeActivity
-import br.com.exchange.app.login.viewmodel.LoginViewModel
 import br.com.exchange.databinding.ActivityLoginBinding
 import org.jetbrains.anko.intentFor
-import org.koin.core.KoinComponent
 
-class LoginActivity : BaseActivity(), KoinComponent {
-
+class LoginActivity : BaseActivity() {
 
     private val viewModel: LoginViewModel by lazy {
         ViewModelProviders.of(this).get(LoginViewModel::class.java)
     }
-
 
     private val binding: ActivityLoginBinding by lazy {
         DataBindingUtil.setContentView(this, R.layout.activity_login) as ActivityLoginBinding
@@ -32,8 +28,6 @@ class LoginActivity : BaseActivity(), KoinComponent {
             startActivity(intentFor<ExchangeActivity>())
         }
 
-
     }
-
 
 }

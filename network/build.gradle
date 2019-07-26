@@ -43,8 +43,7 @@ dependencies {
     // JWT
     implementation 'com.auth0.android:jwtdecode:1.1.1'
 
-    //rxjava
-    implementation "io.reactivex.rxjava2:rxjava:$rxjava"
+    //RX
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroid"
     implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlin"
 
@@ -60,9 +59,7 @@ dependencies {
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-core:$koin_version"
     implementation "org.koin:koin-core-ext:$koin_version"
-    // ViewModel for Android
     implementation "org.koin:koin-android-viewmodel:$koin_version"
-    // or ViewModel for AndroidX
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
     testImplementation "org.koin:koin-test:$koin_version"
     implementation "org.koin:koin-java:$koin_version"

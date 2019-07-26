@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="white">#FFFFFF</color>
-    <color name="toolBar">#FFD185</color>
-    <color name="buttons">#FFD185</color>
-    <color name="text_title">#3f3f3f</color>
-    <color name="colorAccent">#ffffff</color>
+    <color name="colorPrimary">#FFD185</color>
+    <color name="colorPrimaryDark">#FFD185</color>
+    <color name="toolBar">@color/colorPrimary</color>
+    <color name="buttons">@color/colorPrimaryDark</color>
+    <color name="text_title">@color/black</color>
+    <color name="colorAccent">@color/white</color>
     <color name="red">#ff0000</color>
     <color name="background">#ececec</color>
     <color name="cancel">#e8e8e8</color>
     <color name="green">#1b8500</color>
-
+    <color name="black">#3f3f3f</color>
+    <color name="white">#FFFFFF</color>
 </resources>

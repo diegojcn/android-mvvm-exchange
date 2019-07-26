@@ -6,155 +6,174 @@
 
     <data>
 
-        <import type="android.view.View"/>
-
         <variable
                 name="viewModel"
-                type="br.com.exchange.app.login.viewmodel.LoginViewModel"/>
+                type="br.com.exchange.app.login.LoginViewModel" />
     </data>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:background="#000A0A0A">
+            android:layout_height="match_parent"
+            android:background="#000A0A0A">
 
 
         <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_newValue"
                 android:layout_width="395dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/input_newValue"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginEnd="23dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="23dp"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar"
-                android:layout_marginTop="40dp">
+                app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
             <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_textnewvalue"
+                    style="@style/modal_material_input_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/login_username_email"
-                    android:imeOptions="actionGo"
-                    style="@style/modal_material_input_edit_text"
-                    android:id="@+id/edit_textnewvalue"/>
+                    android:imeOptions="actionGo" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
                 android:layout_width="395dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/input_newValue"
-                android:layout_marginEnd="23dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="23dp"
                 android:layout_marginTop="24dp"
-                android:id="@+id/textInputLayout">
+                android:layout_marginEnd="23dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input_newValue">
 
             <com.google.android.material.textfield.TextInputEditText
+                    style="@style/modal_material_input_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionGo"
-                    style="@style/modal_material_input_edit_text"
-                    android:hint="@string/login_password"/>
+                    android:hint="@string/login_password"
+                    android:imeOptions="actionGo" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <Button
-                android:text="LOG IN"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:id="@+id/btnLogin"
-                android:layout_marginTop="52dp"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-                app:layout_constraintStart_toStartOf="parent"
-                android:textColor="#FFFFFF"
-                android:layout_marginStart="23dp"
-                android:background="@color/buttons"
-                android:height="60dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="23dp"
-        />
-        <Button
-                android:text="LOGIN WITH GOOGLE"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnGoogle" android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/btnTwitter" app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="23dp" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="23dp" android:height="60dp"
-                android:background="#C0CCDA"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="23dp"
+                android:height="60dp"
+                android:background="@color/buttons"
+                android:text="LOG IN"
                 android:textColor="#FFFFFF"
-                android:drawableLeft="@drawable/ic_google"
-                android:paddingLeft="20dp"
-                android:drawablePadding="-30dp"
-        />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
         <Button
-                android:text="LOGIN WITH TWITTER"
+                android:id="@+id/btnGoogle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="23dp"
+                android:height="60dp"
+                android:background="#C0CCDA"
+                android:drawableLeft="@drawable/ic_google"
+                android:drawablePadding="-30dp"
+                android:paddingLeft="20dp"
+                android:text="LOGIN WITH GOOGLE"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnTwitter" />
+
+        <Button
+                android:id="@+id/btnTwitter"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
-                android:id="@+id/btnTwitter"
-                android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/btnFacebook"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="23dp"
-                app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="23dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="23dp"
                 android:height="60dp"
                 android:background="#8492A6"
-                android:textColor="#FFFFFF"
                 android:drawableLeft="@drawable/ic_twitter"
-                android:paddingLeft="20dp"
                 android:drawablePadding="-30dp"
-        />
+                android:paddingLeft="20dp"
+                android:text="LOGIN WITH TWITTER"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnFacebook" />
+
         <Button
-                android:text="LOGIN WITH FACEBOOK"
+                android:id="@+id/btnFacebook"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnFacebook"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="23dp"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="23dp" android:height="60dp" android:background=" #3C4858"
-                app:layout_constraintHorizontal_bias="0.0" android:textColor="#FFFFFF"
+                android:height="60dp"
+                android:background=" #3C4858"
                 android:drawableLeft="@drawable/ic_facebook"
-                android:paddingLeft="20dp"
                 android:drawablePadding="-30dp"
-                app:layout_constraintTop_toBottomOf="@+id/or" android:layout_marginTop="30dp"/>
+                android:paddingLeft="20dp"
+                android:text="LOGIN WITH FACEBOOK"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/or" />
+
         <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="0dp"
                 android:layout_height="43dp"
                 android:background="@color/toolBar"
-                android:theme="?attr/actionBarTheme"
                 android:minHeight="?attr/actionBarSize"
-                android:id="@+id/toolbar"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
-        />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
+                android:id="@+id/or"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/or" app:layout_constraintEnd_toEndOf="parent"
-                android:text="OR"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnLogin"
                 android:layout_marginTop="30dp"
-        />
-        <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:id="@+id/viewLeftOr"
+                android:text="OR"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="23dp"
-                app:layout_constraintEnd_toStartOf="@+id/or"
-                app:layout_constraintTop_toBottomOf="@+id/btnLogin"
-                android:visibility="visible"
-                android:layout_marginEnd="30dp"
-                android:background="#00050505" android:layout_marginTop="40dp" android:layout_marginBottom="40dp"
-                app:layout_constraintBottom_toTopOf="@+id/btnFacebook"/>
+                app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
         <View
+                android:id="@+id/viewLeftOr"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:id="@+id/viewRightOr" app:layout_constraintStart_toEndOf="@+id/or"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="23dp"
-                app:layout_constraintTop_toBottomOf="@+id/btnLogin"
-                app:layout_constraintBottom_toTopOf="@+id/btnFacebook" android:layout_marginStart="30dp"
-                android:layout_marginTop="40dp" android:layout_marginBottom="40dp"/>
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="40dp"
+                android:background="#00050505"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/btnFacebook"
+                app:layout_constraintEnd_toStartOf="@+id/or"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+        <View
+                android:id="@+id/viewRightOr"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginBottom="40dp"
+                app:layout_constraintBottom_toTopOf="@+id/btnFacebook"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/or"
+                app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

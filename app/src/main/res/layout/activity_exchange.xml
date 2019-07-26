@@ -1,157 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".app.exchange.ExchangeActivity"
-        android:id="@+id/layout2">
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".app.exchange.ExchangeActivity">
 
     <data>
-
-        <import type="android.view.View"/>
-
         <variable
                 name="viewModel"
-                type="br.com.exchange.app.exchange.viewmodel.ExchangeActivityViewModel"/>
+                type="br.com.exchange.app.exchange.ExchangeActivityViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
+
         <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="0dp"
                 android:layout_height="56dp"
                 android:background="@color/toolBar"
-                android:theme="?attr/actionBarTheme"
                 android:minHeight="?attr/actionBarSize"
-                android:id="@+id/toolbar" app:layout_constraintStart_toStartOf="parent"
+                android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:popupTheme="@style/AppTheme.PopupOverlay" app:titleTextColor="#FFFFFF"
-                app:layout_constraintHorizontal_bias="0.0">
-        </androidx.appcompat.widget.Toolbar>
-
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:titleTextColor="@color/white" />
 
         <TextView
+                android:id="@+id/labelSpinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="TIPO MOEDA"
-                app:layout_constraintTop_toTopOf="@+id/spinnerTo"
-                android:labelFor="@id/spinnerTo"
-                android:layout_marginTop="50dp"
-                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-                android:id="@+id/labelSpinner"
-                app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="10dp"
-        />
+                android:layout_marginTop="50dp"
+                android:labelFor="@id/spinnerTo"
+                android:text="TIPO MOEDA"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/spinnerTo" />
 
         <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinnerTo"
                 android:layout_width="381dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinnerTo"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="23dp"
                 android:imeOptions="actionNext"
-                android:layout_marginStart="10dp"
                 android:spinnerMode="dialog"
+                android:tag="to"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.562"
-                app:layout_constraintTop_toBottomOf="@+id/labelSpinner"
-                android:tag="to"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelSpinner" />
 
         <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_newValue"
                 android:layout_width="395dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/input_newValue"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="23dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="23dp"
-                app:layout_constraintTop_toBottomOf="@+id/spinnerTo"
-                android:layout_marginTop="30dp">
+                app:layout_constraintTop_toBottomOf="@+id/spinnerTo">
 
             <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_textnewvalue"
+                    style="@style/modal_material_input_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="Valor a ser convertido"
                     android:imeOptions="actionGo"
                     android:inputType="numberDecimal"
-                    android:hint="Valor a ser convertido"
-                    android:text="@={viewModel.valueTo}"
-                    style="@style/modal_material_input_edit_text"
-                    android:id="@+id/edit_textnewvalue"/>
+                    android:text="@={viewModel.valueTo}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
+                android:id="@+id/labelSpinnerDesiredCoin"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="MOEDA DESEJADA"
-                android:labelFor="@id/spinnerFrom"
-                android:id="@+id/labelSpinnerDesiredCoin"
-                app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="93dp"
-                app:layout_constraintTop_toBottomOf="@+id/input_newValue"
-                app:layout_constraintBottom_toTopOf="@+id/spinnerFrom"/>
+                android:labelFor="@id/spinnerFrom"
+                android:text="MOEDA DESEJADA"
+                app:layout_constraintBottom_toTopOf="@+id/spinnerFrom"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input_newValue" />
 
         <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinnerFrom"
                 android:layout_width="381dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinnerFrom"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="23dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginEnd="23dp"
                 android:imeOptions="actionNext"
                 android:spinnerMode="dialog"
+                android:tag="from"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.937"
-                app:layout_constraintTop_toBottomOf="@+id/labelSpinnerDesiredCoin"
-                android:tag="from"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelSpinnerDesiredCoin" />
 
 
         <LinearLayout
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 android:id="@+id/input_newValueDesiredCoin"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginStart="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/spinnerFrom"
-                android:layout_marginTop="30dp" android:layout_marginEnd="10dp">
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerFrom">
 
-            <TextView android:text="CONVERSÃO:"
-                      android:layout_width="100dp"
-                      android:layout_height="wrap_content"/>
+            <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="CONVERSÃO:" />
 
-            <TextView android:text="@{viewModel.valueFrom}"
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.valueFrom}" />
 
         </LinearLayout>
 
         <Button
-                android:text="Converter"
-                android:textColor="#FFFFFF"
+                android:id="@+id/btn_convert"
                 android:layout_width="228dp"
                 android:layout_height="93dp"
-                android:id="@+id/btnconverter"
-                android:background="@color/buttons"
-                android:layout_marginTop="40dp"
-                app:layout_constraintTop_toBottomOf="@+id/input_newValueDesiredCoin"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginStart="8dp"
-                app:layout_constraintStart_toStartOf="parent"/>
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/buttons"
+                android:onClick="@{() -> viewModel.convert()}"
+                android:text="Converter"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input_newValueDesiredCoin" />
+
         <Button
-                android:text="Histórico"
+                android:id="@+id/btn_history"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/historyBtn"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="@+id/toolbar"
-                android:layout_marginEnd="8dp" android:layout_marginBottom="5dp"
-                app:layout_constraintBottom_toBottomOf="@+id/toolbar" app:layout_constraintVertical_bias="1.0"
-                android:layout_marginTop="5dp" android:background="@color/buttons" android:shadowColor="#000A0A0A"
-                android:textColor="#FFFFFF"/>
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/buttons"
+                android:text="Histórico"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                app:layout_constraintEnd_toEndOf="@+id/toolbar"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+                android:id="@+id/msg_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:text="@{viewModel.msnError}"
+                android:textColor="@color/red"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
