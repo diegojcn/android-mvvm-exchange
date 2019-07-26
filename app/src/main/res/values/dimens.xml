@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin">16dp</dimen>
+    <dimen name="main_menu_logo_width">80dp</dimen>
+    <dimen name="main_menu_width">260dp</dimen>
+
+    <dimen name="text_title">14sp</dimen>
+    <dimen name="text_small">12.5sp</dimen>
+    <dimen name="text">12sp</dimen>
+    <dimen name="width_shape">80dp</dimen>
+    <dimen name="height_card_ticket">220dp</dimen>
+    <dimen name="margin_card">10dp</dimen>
+
+    <dimen name="dialog_padding_top">16dp</dimen>
+    <dimen name="dialog_padding">13dp</dimen>
+
+</resources>

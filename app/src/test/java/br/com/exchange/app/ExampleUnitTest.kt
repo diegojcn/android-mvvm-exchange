@@ -1,4 +1,4 @@
-package br.com.exchange
+package br.com.exchange.app
 
 import org.junit.Test
 
